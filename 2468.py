@@ -42,3 +42,5 @@ for k in range(1, max(max(native_graph)) + 1):
         Max = result
 
     native_graph = copy.deepcopy(graph) # graph 초기화
+   
+print(Max)
