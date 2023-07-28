@@ -1,3 +1,6 @@
+# max(max(native_graph)) 가 전체 2차원 어레이의 max값이 아님
+# 다르게 수정 height 변수 추가
+
 import copy
 import sys
 sys.setrecursionlimit(10 ** 6)
@@ -24,7 +27,13 @@ for _ in range(N):
 
 native_graph = copy.deepcopy(graph)
 
-for k in range(1, max(max(native_graph)) + 1):
+height = 0
+for _ in native_graph:
+    for l in _:
+        if l > height:
+            height = l
+
+for k in range(1, height + 1):
     for i in range(N):
         for j in range(N):
             if native_graph[i][j] >= k:
@@ -42,5 +51,6 @@ for k in range(1, max(max(native_graph)) + 1):
         Max = result
 
     native_graph = copy.deepcopy(graph) # graph 초기화
-   
+
 print(Max)
+
