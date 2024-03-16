@@ -1,3 +1,6 @@
+# BFS
+# 브루트 포스
+
 import sys
 import copy
 from collections import deque
